@@ -28,18 +28,18 @@ export default {
     methods: {
         fetchCard() {
             const searchCard = this.store.searchCard
-            // axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0', {
                 params: {
-                    name: searchCard,
+                    fname: searchCard,
                 }
 
             }).then((res) => {
-                    console.log(res)
-                    this.store.cards = res.data.data
-                    console.log(store, 'store')
-                })
-
+                console.log(res)
+                this.store.cards = res.data.data
+                console.log(store, 'store')
+            }).catch((error) => {
+                this.store.cards = [];
+            })
 
         }
     },
