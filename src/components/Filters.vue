@@ -1,6 +1,11 @@
 <template>
     <div class="container">
         <input class="input-search" @keyup.enter="$emit('searchForName')" type="text" placeholder="Filtra per nome" v-model="store.searchCard">
+        <select class="input-search" name="" id="">
+            <option value="">--Filtra per--</option>
+            <option value=""></option>
+            <option value=""></option>
+        </select>
     </div>
 </template>
   
